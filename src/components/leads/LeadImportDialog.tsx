@@ -26,19 +26,19 @@ export const LeadImportDialog: React.FC<LeadImportDialogProps> = ({ trigger }) =
       <DialogTrigger asChild>
         {trigger || defaultTrigger}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-1.5rem)] max-w-4xl overflow-y-auto sm:w-full">
         <DialogHeader>
           <DialogTitle>Import Leads</DialogTitle>
         </DialogHeader>
         <Tabs defaultValue="manual" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="manual" className="flex items-center space-x-2">
-              <Plus className="w-4 h-4" />
-              <span>Manual Entry</span>
+          <TabsList className="grid h-auto w-full grid-cols-1 gap-1 p-1 sm:grid-cols-2">
+            <TabsTrigger value="manual" className="flex items-center gap-2 touch-manipulation">
+              <Plus className="h-4 w-4 shrink-0" />
+              <span className="truncate">Manual Entry</span>
             </TabsTrigger>
-            <TabsTrigger value="csv" className="flex items-center space-x-2">
-              <FileSpreadsheet className="w-4 h-4" />
-              <span>CSV Upload</span>
+            <TabsTrigger value="csv" className="flex items-center gap-2 touch-manipulation">
+              <FileSpreadsheet className="h-4 w-4 shrink-0" />
+              <span className="truncate">CSV Upload</span>
             </TabsTrigger>
           </TabsList>
           <TabsContent value="manual" className="mt-6">

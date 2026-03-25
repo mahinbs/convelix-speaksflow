@@ -8,7 +8,6 @@ import Index from '@/pages/Index';
 import Admin from '@/pages/Admin';
 import NotFound from '@/pages/NotFound';
 import Landing from '@/pages/marketing/Landing';
-import { ChatBot } from '@/components/marketing/ChatBot';
 import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { useContactDialog } from '@/hooks/useContactDialog';
@@ -46,7 +45,7 @@ function App() {
             </Routes>
 
             {/* Global Components */}
-            <ChatBot />
+            {/* <ChatBot /> */}
             <Dialog open={isOpen} onOpenChange={closeContactDialog}>
               <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
                 <ContactForm

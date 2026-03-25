@@ -66,7 +66,7 @@ const Index = () => {
   return (
     <FilterProvider>
       <div className="min-h-screen bg-gradient-to-br from-background via-brand-50/80 to-secondary/60 morphing-bg">
-        <div className="flex w-full">
+        <div className="flex w-full min-w-0">
           {/* Desktop Sidebar */}
           {!isMobile && (
             <Sidebar activeTab={activeTab} onTabChange={handleTabChange} />
@@ -82,8 +82,8 @@ const Index = () => {
 
           {/* Main Content */}
           <main
-            className={`flex-1 md:max-h-screen overflow-y-auto overflow-auto ${
-              isMobile ? "p-4 pt-16" : "p-10"
+            className={`min-w-0 flex-1 overflow-y-auto md:max-h-screen ${
+              isMobile ? "px-3 pb-6 pt-20 sm:px-4" : "p-6 lg:p-10"
             }`}
           >
             <div className="slide-up-fade">

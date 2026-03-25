@@ -20,7 +20,7 @@ export const AIReportSummary: React.FC = () => {
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
           <CardHeader className="cursor-pointer hover:bg-brand-50/50 transition-colors">
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap gap-5 items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="p-2 bg-brand-100 rounded-lg">
                   <Brain className="h-6 w-6 text-brand-700" />
@@ -32,7 +32,7 @@ export const AIReportSummary: React.FC = () => {
                   </CardDescription>
                 </div>
               </div>
-              <Button  size="sm" className="text-brand-700">
+              <Button  size="sm" className="text-white w-full md:w-auto">
                 {isOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
               </Button>
             </div>

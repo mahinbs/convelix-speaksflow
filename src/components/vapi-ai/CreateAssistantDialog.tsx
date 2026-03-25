@@ -69,7 +69,7 @@ export const CreateAssistantDialog: React.FC<CreateAssistantDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px]">
+      <DialogContent className="max-h-[min(90dvh,720px)] w-[calc(100vw-1.5rem)] max-w-[600px] overflow-y-auto sm:w-full">
         <DialogHeader>
           <DialogTitle>Create Voice AI Assistant</DialogTitle>
           <DialogDescription>
@@ -78,7 +78,7 @@ export const CreateAssistantDialog: React.FC<CreateAssistantDialogProps> = ({
         </DialogHeader>
         
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="space-y-2">
               <Label htmlFor="name">Name *</Label>
               <Input

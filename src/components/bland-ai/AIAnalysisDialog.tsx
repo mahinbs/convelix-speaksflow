@@ -76,7 +76,7 @@ export const AIAnalysisDialog: React.FC<AIAnalysisDialogProps> = ({
 
   return (
     <Dialog open={open} onOpenChange={onClose}>
-      <DialogContent className="max-w-6xl max-h-[90vh]">
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-1rem)] max-w-6xl overflow-y-auto sm:w-full">
         <DialogHeader>
           <DialogTitle className="flex items-center space-x-2">
             <Brain className="w-5 h-5" />

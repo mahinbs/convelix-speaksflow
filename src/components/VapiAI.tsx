@@ -40,38 +40,41 @@ export const VapiAI: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Mic className="w-8 h-8 text-brand-700" />
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">Vapi AI</h1>
-            <p className="text-muted-foreground">Real-time voice AI assistants and live call management</p>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center sm:space-x-3">
+          <Mic className="h-8 w-8 shrink-0 text-brand-700" />
+          <div className="min-w-0">
+            <h1 className="text-2xl font-bold text-foreground sm:text-3xl">Vapi AI</h1>
+            <p className="text-sm text-muted-foreground sm:text-base">
+              Real-time voice AI assistants and live call management
+            </p>
           </div>
         </div>
       </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="dashboard" className="flex items-center space-x-2">
-            <BarChart3 className="w-4 h-4" />
-            <span>Dashboard</span>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4 sm:space-y-6">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 p-1 sm:grid-cols-3 lg:grid-cols-5">
+          <TabsTrigger value="dashboard" className="min-w-0 gap-1 px-2 sm:gap-2 sm:px-3">
+            <BarChart3 className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Dashboard</span>
           </TabsTrigger>
-          <TabsTrigger value="assistants" className="flex items-center space-x-2">
-            <Users className="w-4 h-4" />
-            <span>Assistants</span>
+          <TabsTrigger value="assistants" className="min-w-0 gap-1 px-2 sm:gap-2 sm:px-3">
+            <Users className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Assistants</span>
           </TabsTrigger>
-          <TabsTrigger value="calls" className="flex items-center space-x-2">
-            <Phone className="w-4 h-4" />
-            <span>Calls</span>
+          <TabsTrigger value="calls" className="min-w-0 gap-1 px-2 sm:gap-2 sm:px-3">
+            <Phone className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Calls</span>
           </TabsTrigger>
-          <TabsTrigger value="phone-numbers" className="flex items-center space-x-2">
-            <Phone className="w-4 h-4" />
-            <span>Phone Numbers</span>
+          <TabsTrigger value="phone-numbers" className="min-w-0 gap-1 px-2 sm:gap-2 sm:px-3">
+            <Phone className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:hidden">Numbers</span>
+            <span className="hidden truncate text-xs sm:inline sm:text-sm">Phone Numbers</span>
           </TabsTrigger>
-          <TabsTrigger value="settings" className="flex items-center space-x-2">
-            <Settings className="w-4 h-4" />
-            <span>Settings</span>
+          <TabsTrigger value="settings" className="min-w-0 gap-1 px-2 sm:gap-2 sm:px-3">
+            <Settings className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Settings</span>
           </TabsTrigger>
         </TabsList>
 

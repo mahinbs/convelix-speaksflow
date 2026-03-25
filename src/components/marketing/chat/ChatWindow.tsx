@@ -37,7 +37,7 @@ export const ChatWindow: React.FC<ChatWindowProps> = ({
 
   return (
     <Card 
-      className={`w-80 h-[500px] flex flex-col shadow-2xl border-0 ${isDashboard ? 'bg-white' : 'bg-white/95 backdrop-blur-md'}`}
+      className={`flex h-[min(32rem,70dvh)] w-[min(calc(100vw-1rem),20rem)] max-w-[calc(100vw-1rem)] flex-col border-0 shadow-2xl sm:h-[500px] sm:w-80 sm:max-w-none ${isDashboard ? 'bg-white' : 'bg-white/95 backdrop-blur-md'}`}
       onClick={handleStopPropagation}
     >
       <CardHeader className="flex flex-row items-center justify-between p-4 bg-gradient-to-r from-brand-500 to-brand-700 text-primary-foreground rounded-t-lg">

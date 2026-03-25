@@ -43,34 +43,37 @@ export const BlandAI: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-3">
-          <Logo size="lg" />
-          <div>
-            <h1 className="text-3xl font-bold text-foreground">Convelix AI</h1>
-            <p className="text-muted-foreground">AI-powered phone calls for lead qualification</p>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:space-x-3">
+          <div className="min-w-0">
+            <h1 className="text-2xl font-bold text-foreground sm:text-3xl">
+              Convelix AI
+            </h1>
+            <p className="text-sm text-muted-foreground sm:text-base">
+              AI-powered phone calls for lead qualification
+            </p>
           </div>
         </div>
       </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4">
-          <TabsTrigger value="dashboard" className="flex items-center space-x-2">
-            <BarChart3 className="w-4 h-4" />
-            <span>Dashboard</span>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4 sm:space-y-6">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 p-1 sm:grid-cols-4">
+          <TabsTrigger value="dashboard" className="min-w-0 flex items-center gap-1 px-2 sm:gap-2 sm:px-3">
+            <BarChart3 className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Dashboard</span>
           </TabsTrigger>
-          <TabsTrigger value="campaigns" className="flex items-center space-x-2">
-            <Bot className="w-4 h-4" />
-            <span>Campaigns</span>
+          <TabsTrigger value="campaigns" className="min-w-0 flex items-center gap-1 px-2 sm:gap-2 sm:px-3">
+            <Bot className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Campaigns</span>
           </TabsTrigger>
-          <TabsTrigger value="calls" className="flex items-center space-x-2">
-            <Phone className="w-4 h-4" />
-            <span>Calls</span>
+          <TabsTrigger value="calls" className="min-w-0 flex items-center gap-1 px-2 sm:gap-2 sm:px-3">
+            <Phone className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Calls</span>
           </TabsTrigger>
-          <TabsTrigger value="settings" className="flex items-center space-x-2">
-            <Settings className="w-4 h-4" />
-            <span>Settings</span>
+          <TabsTrigger value="settings" className="min-w-0 flex items-center gap-1 px-2 sm:gap-2 sm:px-3">
+            <Settings className="h-4 w-4 shrink-0" />
+            <span className="truncate text-xs sm:text-sm">Settings</span>
           </TabsTrigger>
         </TabsList>
 
@@ -84,7 +87,7 @@ export const BlandAI: React.FC = () => {
 
         <TabsContent value="calls">
           <Suspense fallback={
-            <div className="flex items-center justify-center h-[600px]">
+            <div className="flex min-h-[280px] items-center justify-center sm:h-[600px]">
               <div className="flex flex-col items-center space-y-4">
                 <Loader2 className="w-12 h-12 text-primary animate-spin" />
                 <p className="text-muted-foreground">Loading call history...</p>

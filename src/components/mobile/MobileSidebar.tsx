@@ -61,9 +61,8 @@ export const MobileSidebar: React.FC<MobileSidebarProps> = ({ activeTab, onTabCh
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
         <Button
-          
           size="icon"
-          className="md:hidden fixed top-4 left-4 z-50 bg-card/95 backdrop-blur-sm shadow-lg border border-border"
+          className="md:hidden !fixed top-4 left-4 z-50 bg-card/95 backdrop-blur-sm shadow-lg border border-border"
         >
           <Menu className="h-6 w-6" />
         </Button>

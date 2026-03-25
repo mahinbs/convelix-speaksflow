@@ -47,7 +47,7 @@ export const QualifiedLeadsView: React.FC<QualifiedLeadsViewProps> = ({ status, 
               <CardContent className="p-6">
                 <div className="h-6 bg-muted rounded mb-2"></div>
                 <div className="h-4 bg-muted rounded mb-4"></div>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                   <div className="h-4 bg-muted rounded"></div>
                   <div className="h-4 bg-muted rounded"></div>
                   <div className="h-4 bg-muted rounded"></div>
@@ -63,20 +63,21 @@ export const QualifiedLeadsView: React.FC<QualifiedLeadsViewProps> = ({ status, 
   return (
     <div className="space-y-6">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <Button variant="outline" size="sm" onClick={onBack}>
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Dashboard
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <div className="flex min-w-0 flex-col gap-4 sm:flex-row sm:items-center sm:space-x-4">
+          <Button variant="outline" size="sm" onClick={onBack} className="w-fit shrink-0 touch-manipulation">
+            <ArrowLeft className="mr-2 h-4 w-4" />
+            <span className="hidden sm:inline">Back to Dashboard</span>
+            <span className="sm:hidden">Back</span>
           </Button>
-          <div>
-            <h1 className="text-2xl font-bold flex items-center space-x-2">
+          <div className="min-w-0">
+            <h1 className="flex flex-wrap items-center gap-2 text-xl font-bold sm:text-2xl">
               <span>{status} Leads</span>
               <Badge className={getStatusColor(status)}>
                 {leads.length}
               </Badge>
             </h1>
-            <p className="text-muted-foreground">
+            <p className="text-sm text-muted-foreground sm:text-base">
               {status === 'Hot' && 'Very interested, qualified leads (score 71-85+)'}
               {status === 'Warm' && 'Interested with minor concerns (score 51-70)'}
               {status === 'Cold' && 'Some interest but major barriers (score 31-50)'}
@@ -107,7 +108,7 @@ export const QualifiedLeadsView: React.FC<QualifiedLeadsViewProps> = ({ status, 
               <CardContent className="p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-2">
+                    <div className="mb-2 flex flex-wrap items-center gap-2">
                       <h3 className="text-lg font-semibold">
                         {lead.name || 'Unknown Name'}
                       </h3>
@@ -121,23 +122,23 @@ export const QualifiedLeadsView: React.FC<QualifiedLeadsViewProps> = ({ status, 
                       )}
                     </div>
                     
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-muted-foreground">
+                    <div className="grid grid-cols-1 gap-4 text-sm text-muted-foreground md:grid-cols-3">
                       {lead.email && (
-                        <div className="flex items-center space-x-2">
-                          <Mail className="w-4 h-4" />
-                          <span>{lead.email}</span>
+                        <div className="flex min-w-0 items-center gap-2">
+                          <Mail className="h-4 w-4 shrink-0" />
+                          <span className="break-all">{lead.email}</span>
                         </div>
                       )}
                       {lead.phone && (
-                        <div className="flex items-center space-x-2">
-                          <Phone className="w-4 h-4" />
-                          <span>{lead.phone}</span>
+                        <div className="flex min-w-0 items-center gap-2">
+                          <Phone className="h-4 w-4 shrink-0" />
+                          <span className="break-all">{lead.phone}</span>
                         </div>
                       )}
                       {lead.company && (
-                        <div className="flex items-center space-x-2">
-                          <Building className="w-4 h-4" />
-                          <span>{lead.company}</span>
+                        <div className="flex min-w-0 items-center gap-2">
+                          <Building className="h-4 w-4 shrink-0" />
+                          <span className="break-words">{lead.company}</span>
                         </div>
                       )}
                     </div>

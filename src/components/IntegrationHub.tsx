@@ -107,11 +107,13 @@ export const IntegrationHub: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header */}
-      <div>
-        <h1 className="text-2xl font-bold text-foreground">Lead Integrations</h1>
-        <p className="text-muted-foreground">Connect your lead sources to automatically import and manage leads</p>
+      <div className="min-w-0">
+        <h1 className="text-xl font-bold text-foreground sm:text-2xl">Lead Integrations</h1>
+        <p className="text-sm text-muted-foreground sm:text-base">
+          Connect your lead sources to automatically import and manage leads
+        </p>
       </div>
 
       {/* Stats */}

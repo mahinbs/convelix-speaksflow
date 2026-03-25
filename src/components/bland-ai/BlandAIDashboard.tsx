@@ -47,7 +47,7 @@ export const BlandAIDashboard: React.FC = () => {
       icon: Phone,
       description: 'All time calls made',
       color: 'blue',
-      gradient: 'from-brand-500/20 via-brand-400/20 to-brand-600/20'
+      gradient: ''
     },
     {
       title: 'Active Campaigns',
@@ -55,7 +55,7 @@ export const BlandAIDashboard: React.FC = () => {
       icon: Users,
       description: 'Currently running campaigns',
       color: 'green',
-      gradient: 'from-brand-400/20 via-brand-500/20 to-brand-600/20'
+      gradient: ''
     },
     {
       title: 'Completed Calls',
@@ -63,7 +63,7 @@ export const BlandAIDashboard: React.FC = () => {
       icon: CheckCircle,
       description: 'Successfully completed calls',
       color: 'purple',
-      gradient: 'from-brand-500/20 via-brand-600/20 to-brand-700/20'
+      gradient: ''
     },
     {
       title: 'Success Rate',
@@ -71,7 +71,7 @@ export const BlandAIDashboard: React.FC = () => {
       icon: TrendingUp,
       description: 'Call success percentage',
       color: 'orange',
-      gradient: 'from-brand-300/20 via-brand-500/20 to-brand-700/20'
+      gradient: ''
     }
   ];
 

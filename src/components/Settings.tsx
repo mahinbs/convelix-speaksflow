@@ -15,41 +15,43 @@ export const Settings: React.FC = () => {
   const [activeTab, setActiveTab] = useState('profile');
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div>
-        <h2 className="text-2xl font-bold">Settings</h2>
-        <p className="text-muted-foreground">Manage your account preferences and application settings</p>
+        <h2 className="text-xl font-bold sm:text-2xl">Settings</h2>
+        <p className="text-sm text-muted-foreground sm:text-base">
+          Manage your account preferences and application settings
+        </p>
       </div>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-        <TabsList className="grid w-full grid-cols-4 lg:grid-cols-7">
-          <TabsTrigger value="profile" className="flex items-center space-x-2">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-4 sm:space-y-6">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 p-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7">
+          <TabsTrigger value="profile" className="min-w-0 flex items-center space-x-2">
             <User className="w-4 h-4" />
-            <span className="hidden sm:inline">Profile</span>
+            <span className="inline">Profile</span>
           </TabsTrigger>
-          <TabsTrigger value="notifications" className="flex items-center space-x-2">
+          <TabsTrigger value="notifications" className="min-w-0 flex items-center space-x-2">
             <Bell className="w-4 h-4" />
-            <span className="hidden sm:inline">Notifications</span>
+            <span className="inline">Notifications</span>
           </TabsTrigger>
-          <TabsTrigger value="business" className="flex items-center space-x-2">
+          <TabsTrigger value="business" className="min-w-0 flex items-center space-x-2">
             <Building className="w-4 h-4" />
-            <span className="hidden sm:inline">Business</span>
+            <span className="inline">Business</span>
           </TabsTrigger>
-          <TabsTrigger value="ai" className="flex items-center space-x-2">
+          <TabsTrigger value="ai" className="min-w-0 flex items-center space-x-2">
             <Bot className="w-4 h-4" />
-            <span className="hidden sm:inline">AI</span>
+            <span className="inline">AI</span>
           </TabsTrigger>
-          <TabsTrigger value="calls" className="flex items-center space-x-2">
+          <TabsTrigger value="calls" className="min-w-0 flex items-center space-x-2">
             <Phone className="w-4 h-4" />
-            <span className="hidden sm:inline">Calls</span>
+            <span className="inline">Calls</span>
           </TabsTrigger>
           <TabsTrigger value="privacy" className="flex items-center space-x-2">
             <Shield className="w-4 h-4" />
-            <span className="hidden sm:inline">Privacy</span>
+            <span className="inline">Privacy</span>
           </TabsTrigger>
-          <TabsTrigger value="security" className="flex items-center space-x-2">
+          <TabsTrigger value="security" className="min-w-0 flex items-center space-x-2">
             <Lock className="w-4 h-4" />
-            <span className="hidden sm:inline">Security</span>
+            <span className="inline">Security</span>
           </TabsTrigger>
         </TabsList>
 

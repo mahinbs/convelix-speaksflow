@@ -99,29 +99,31 @@ export const AdminDashboard: React.FC = () => {
     };
 
     return (
-        <div className="p-6 space-y-6">
-            <div>
-                <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-                <p className="text-muted-foreground">Manage users, settings, and system configuration</p>
+        <div className="space-y-4 p-4 sm:space-y-6 sm:p-6">
+            <div className="min-w-0">
+                <h1 className="text-2xl font-bold sm:text-3xl">Admin Dashboard</h1>
+                <p className="text-sm text-muted-foreground sm:text-base">
+                  Manage users, settings, and system configuration
+                </p>
             </div>
 
-            <Tabs defaultValue="users" className="space-y-6">
-                <TabsList className="grid w-full grid-cols-4">
-                    <TabsTrigger value="users" className="flex items-center space-x-2">
-                        <Users className="w-4 h-4" />
-                        <span>Users</span>
+            <Tabs defaultValue="users" className="space-y-4 sm:space-y-6">
+                <TabsList className="grid h-auto w-full grid-cols-2 gap-1 p-1 sm:grid-cols-4">
+                    <TabsTrigger value="users" className="min-w-0 gap-1.5 px-2 sm:px-3">
+                        <Users className="h-4 w-4 shrink-0" />
+                        <span className="truncate text-xs sm:text-sm">Users</span>
                     </TabsTrigger>
-                    <TabsTrigger value="contact" className="flex items-center space-x-2">
-                        <MessageSquare className="w-4 h-4" />
-                        <span>Contact</span>
+                    <TabsTrigger value="contact" className="min-w-0 gap-1.5 px-2 sm:px-3">
+                        <MessageSquare className="h-4 w-4 shrink-0" />
+                        <span className="truncate text-xs sm:text-sm">Contact</span>
                     </TabsTrigger>
-                    <TabsTrigger value="activation" className="flex items-center space-x-2">
-                        <Settings className="w-4 h-4" />
-                        <span>Activation</span>
+                    <TabsTrigger value="activation" className="min-w-0 gap-1.5 px-2 sm:px-3">
+                        <Settings className="h-4 w-4 shrink-0" />
+                        <span className="truncate text-xs sm:text-sm">Activation</span>
                     </TabsTrigger>
-                    <TabsTrigger value="settings" className="flex items-center space-x-2">
-                        <Settings className="w-4 h-4" />
-                        <span>Settings</span>
+                    <TabsTrigger value="settings" className="min-w-0 gap-1.5 px-2 sm:px-3">
+                        <Settings className="h-4 w-4 shrink-0" />
+                        <span className="truncate text-xs sm:text-sm">Settings</span>
                     </TabsTrigger>
                 </TabsList>
 

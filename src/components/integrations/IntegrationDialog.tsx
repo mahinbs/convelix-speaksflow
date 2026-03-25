@@ -41,12 +41,12 @@ export const IntegrationDialog: React.FC<IntegrationDialogProps> = ({
   if (mode === 'credentials') {
     return (
       <Dialog open={isOpen} onOpenChange={() => onClose()}>
-        <DialogContent className="max-w-md">
+        <DialogContent className="w-[calc(100vw-1.5rem)] max-w-md max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>Configure {integration.name}</DialogTitle>
           </DialogHeader>
           <Tabs defaultValue="credentials" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
+            <TabsList className="grid h-auto w-full grid-cols-1 gap-1 p-1 sm:grid-cols-2">
               <TabsTrigger value="credentials">Credentials</TabsTrigger>
               <TabsTrigger value="instructions">Instructions</TabsTrigger>
             </TabsList>
@@ -95,7 +95,7 @@ export const IntegrationDialog: React.FC<IntegrationDialogProps> = ({
 
   return (
     <Dialog open={isOpen} onOpenChange={() => onClose()}>
-      <DialogContent>
+      <DialogContent className="max-h-[90vh] w-[calc(100vw-1.5rem)] max-w-lg overflow-y-auto sm:w-full">
         <DialogHeader>
           <DialogTitle>Connect {integration.name}</DialogTitle>
         </DialogHeader>

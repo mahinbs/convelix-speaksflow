@@ -80,14 +80,16 @@ export const BlandAICampaigns: React.FC = () => {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center">
-        <div>
-          <h2 className="text-2xl font-bold">AI Call Campaigns</h2>
-          <p className="text-muted-foreground">Create and manage your AI calling campaigns</p>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
+          <h2 className="text-xl font-bold sm:text-2xl">AI Call Campaigns</h2>
+          <p className="text-sm text-muted-foreground sm:text-base">
+            Create and manage your AI calling campaigns
+          </p>
         </div>
-        <Button onClick={() => setShowCreateDialog(true)}>
-          <Plus className="w-4 h-4 mr-2" />
+        <Button onClick={() => setShowCreateDialog(true)} className="w-full shrink-0 touch-manipulation sm:w-auto">
+          <Plus className="mr-2 h-4 w-4" />
           Create Campaign
         </Button>
       </div>
@@ -131,7 +133,7 @@ export const BlandAICampaigns: React.FC = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2">
                     <div>
                       <p className="text-muted-foreground">Total Leads</p>
                       <p className="font-semibold">{campaign.total_leads || 0}</p>

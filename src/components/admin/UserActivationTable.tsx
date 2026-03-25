@@ -85,8 +85,8 @@ export const UserActivationTable: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <div className="rounded-md border">
-        <Table>
+      <div className="overflow-x-auto rounded-md border">
+        <Table className="min-w-[640px]">
           <TableHeader>
             <TableRow>
               <TableHead>User</TableHead>

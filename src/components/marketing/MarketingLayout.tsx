@@ -5,7 +5,6 @@ import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/ui/logo';
 import { Menu, X, Mail } from 'lucide-react';
 import { useState, useEffect } from 'react';
-import { ChatBot } from './ChatBot';
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -49,14 +48,6 @@ export const MarketingLayout: React.FC<MarketingLayoutProps> = ({ children }) =>
                   className="shadow-md"
                 >
                   Sign In
-                </Button>
-              </Link>
-              <Link to="/auth">
-                <Button 
-                  size="sm" 
-                  className="shadow-md"
-                >
-                  Start Free Trial
                 </Button>
               </Link>
             </div>
@@ -181,7 +172,7 @@ export const MarketingLayout: React.FC<MarketingLayoutProps> = ({ children }) =>
       </footer>
 
       {/* Floating Chat Bot */}
-      <ChatBot />
+      {/* <ChatBot /> */}
     </div>
   );
 };

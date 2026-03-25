@@ -48,20 +48,22 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   };
 
   return (
-    <div className="flex items-center space-x-2">
-      <span className="text-sm font-medium text-muted-foreground">Filter by:</span>
-      
-      {filterOptions.slice(0, 3).map((option) => (
-        <Button
-          key={option.value}
-          variant={selectedFilter === option.value ? 'default' : 'outline'}
-          size="sm"
-          onClick={() => onFilterChange(option.value)}
-          className="h-8"
-        >
-          {option.label}
-        </Button>
-      ))}
+    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+      <span className="shrink-0 text-sm font-medium text-muted-foreground">
+        Filter by:
+      </span>
+      <div className="flex flex-wrap items-center gap-2">
+        {filterOptions.slice(0, 3).map((option) => (
+          <Button
+            key={option.value}
+            variant={selectedFilter === option.value ? 'default' : 'outline'}
+            size="sm"
+            onClick={() => onFilterChange(option.value)}
+            className="h-8 touch-manipulation"
+          >
+            {option.label}
+          </Button>
+        ))}
 
       <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
         <PopoverTrigger asChild>
@@ -152,6 +154,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
           </div>
         </PopoverContent>
       </Popover>
+      </div>
     </div>
   );
 };

@@ -21,13 +21,15 @@ export const Reports: React.FC = () => {
   };
 
   return (
-    <div className="space-y-8">
-      <div className="flex items-center justify-between slide-in-elegant">
-        <div>
-          <h1 className="text-4xl font-bold text-foreground bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+    <div className="space-y-6 md:space-y-8">
+      <div className="slide-in-elegant flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-2xl font-bold text-foreground bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent sm:text-3xl md:text-4xl">
             Reports & Analytics
           </h1>
-          <p className="text-muted-foreground mt-2 text-lg">Comprehensive insights into your lead generation and AI calling performance</p>
+          <p className="mt-2 text-sm text-muted-foreground sm:text-base md:text-lg">
+            Comprehensive insights into your lead generation and AI calling performance
+          </p>
         </div>
       </div>
 
@@ -35,7 +37,7 @@ export const Reports: React.FC = () => {
       <AIReportSummary />
 
       {/* Enhanced Overview Cards */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-8">
         <Card className="group stagger-animation stagger-1">
           <div className="absolute inset-0 bg-gradient-to-br from-brand-500/10 to-brand-300/10 opacity-0 group-hover:opacity-100 transition-all duration-700"></div>
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
@@ -127,23 +129,26 @@ export const Reports: React.FC = () => {
       </div>
 
       {/* Enhanced Report Tabs */}
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-8 slide-up-fade">
-        <TabsList className="grid w-full grid-cols-4 bg-background/60 backdrop-blur-md border border-border/50 p-2 rounded-2xl shadow-xl">
-          <TabsTrigger value="lead-performance" className="flex items-center space-x-2 rounded-xl transition-all duration-300 hover-scale-elegant">
-            <Users className="w-4 h-4" />
-            <span>Lead Performance</span>
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="slide-up-fade space-y-4 md:space-y-8">
+        <TabsList className="grid h-auto w-full grid-cols-2 gap-1 rounded-2xl border border-border/50 bg-background/60 p-1 shadow-xl backdrop-blur-md sm:grid-cols-4 sm:p-2">
+          <TabsTrigger value="lead-performance" className="min-w-0 gap-1 rounded-xl px-2 text-xs transition-all duration-300 hover-scale-elegant sm:gap-2 sm:px-3 sm:text-sm">
+            <Users className="h-4 w-4 shrink-0" />
+            <span className="truncate sm:hidden">Leads</span>
+            <span className="hidden truncate sm:inline">Lead Performance</span>
           </TabsTrigger>
-          <TabsTrigger value="call-analytics" className="flex items-center space-x-2 rounded-xl transition-all duration-300 hover-scale-elegant">
-            <Phone className="w-4 h-4" />
-            <span>Call Analytics</span>
+          <TabsTrigger value="call-analytics" className="min-w-0 gap-1 rounded-xl px-2 text-xs transition-all duration-300 hover-scale-elegant sm:gap-2 sm:px-3 sm:text-sm">
+            <Phone className="h-4 w-4 shrink-0" />
+            <span className="truncate sm:hidden">Calls</span>
+            <span className="hidden truncate sm:inline">Call Analytics</span>
           </TabsTrigger>
-          <TabsTrigger value="campaign-roi" className="flex items-center space-x-2 rounded-xl transition-all duration-300 hover-scale-elegant">
-            <BarChart3 className="w-4 h-4" />
-            <span>Campaign ROI</span>
+          <TabsTrigger value="campaign-roi" className="min-w-0 gap-1 rounded-xl px-2 text-xs transition-all duration-300 hover-scale-elegant sm:gap-2 sm:px-3 sm:text-sm">
+            <BarChart3 className="h-4 w-4 shrink-0" />
+            <span className="truncate sm:hidden">ROI</span>
+            <span className="hidden truncate sm:inline">Campaign ROI</span>
           </TabsTrigger>
-          <TabsTrigger value="revenue" className="flex items-center space-x-2 rounded-xl transition-all duration-300 hover-scale-elegant">
-            <DollarSign className="w-4 h-4" />
-            <span>Revenue</span>
+          <TabsTrigger value="revenue" className="min-w-0 gap-1 rounded-xl px-2 text-xs transition-all duration-300 hover-scale-elegant sm:gap-2 sm:px-3 sm:text-sm">
+            <DollarSign className="h-4 w-4 shrink-0" />
+            <span className="truncate">Revenue</span>
           </TabsTrigger>
         </TabsList>
 

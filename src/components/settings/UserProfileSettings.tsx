@@ -338,7 +338,7 @@ export const UserProfileSettings: React.FC = () => {
             Manage your account settings and preferences
           </CardDescription>
         </CardHeader>
-        <CardContent className="space-y-4">
+        <CardContent className="flex flex-col md:flex-row gap-3">
           <Button variant="outline" className="w-full md:w-auto">
             Change Password
           </Button>

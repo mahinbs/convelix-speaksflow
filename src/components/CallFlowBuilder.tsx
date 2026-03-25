@@ -69,33 +69,41 @@ export const CallFlowBuilder: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       {/* Header */}
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-2xl font-bold text-foreground">AI Call Flow Builder</h1>
-          <p className="text-muted-foreground">Design intelligent conversation flows for your AI calls</p>
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
+          <h1 className="text-xl font-bold text-foreground sm:text-2xl">AI Call Flow Builder</h1>
+          <p className="text-sm text-muted-foreground sm:text-base">
+            Design intelligent conversation flows for your AI calls
+          </p>
         </div>
-        <div className="flex space-x-3">
-          <button className="flex items-center space-x-2 bg-white border border-border px-4 py-2 rounded-lg hover:bg-muted">
-            <Copy className="w-4 h-4" />
+        <div className="flex flex-col gap-2 sm:flex-row sm:space-x-3 sm:space-y-0">
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 rounded-lg border border-border bg-white px-4 py-2 text-sm hover:bg-muted touch-manipulation"
+          >
+            <Copy className="h-4 w-4 shrink-0" />
             <span>Duplicate Flow</span>
           </button>
-          <button className="flex items-center space-x-2 bg-primary text-white px-4 py-2 rounded-lg hover:bg-primary/90">
-            <Plus className="w-4 h-4" />
+          <button
+            type="button"
+            className="flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm text-primary-foreground hover:bg-primary/90 touch-manipulation"
+          >
+            <Plus className="h-4 w-4 shrink-0" />
             <span>New Flow</span>
           </button>
         </div>
       </div>
 
       {/* Flow Selector */}
-      <div className="bg-white p-4 rounded-lg border border-border">
-        <div className="flex items-center space-x-4">
-          <label className="text-sm font-medium text-foreground">Current Flow:</label>
+      <div className="rounded-lg border border-border bg-white p-4">
+        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:space-x-4">
+          <label className="shrink-0 text-sm font-medium text-foreground">Current Flow:</label>
           <select
             value={selectedFlow}
             onChange={(e) => setSelectedFlow(e.target.value)}
-            className="border border-border rounded-lg px-3 py-2 focus:ring-2 focus:ring-brand-500 focus:border-transparent"
+            className="min-w-0 w-full max-w-md rounded-lg border border-border px-3 py-2 focus:border-transparent focus:ring-2 focus:ring-brand-500 lg:w-auto"
           >
             {flows.map((flow) => (
               <option key={flow.id} value={flow.id}>
@@ -103,13 +111,19 @@ export const CallFlowBuilder: React.FC = () => {
               </option>
             ))}
           </select>
-          <div className="flex space-x-2">
-            <button className="flex items-center space-x-2 bg-primary text-white px-3 py-2 rounded-lg hover:bg-primary/90 text-sm">
-              <Play className="w-4 h-4" />
+          <div className="flex flex-wrap gap-2">
+            <button
+              type="button"
+              className="flex items-center gap-2 rounded-lg bg-primary px-3 py-2 text-sm text-primary-foreground hover:bg-primary/90 touch-manipulation"
+            >
+              <Play className="h-4 w-4 shrink-0" />
               <span>Test Flow</span>
             </button>
-            <button className="flex items-center space-x-2 border border-border px-3 py-2 rounded-lg hover:bg-muted text-sm">
-              <Settings className="w-4 h-4" />
+            <button
+              type="button"
+              className="flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm hover:bg-muted touch-manipulation"
+            >
+              <Settings className="h-4 w-4 shrink-0" />
               <span>Settings</span>
             </button>
           </div>

@@ -363,13 +363,13 @@ export const DashboardOverview: React.FC<DashboardOverviewProps> = ({ onQualific
 
       {/* Mobile Action Buttons */}
       {isMobile && (
-        <div className="grid grid-cols-2 gap-3">
-          <Button className="w-full touch-manipulation min-h-[48px]">
-            <Phone className="w-4 h-4 mr-2" />
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <Button className="min-h-[48px] w-full touch-manipulation">
+            <Phone className="mr-2 h-4 w-4" />
             Make Call
           </Button>
-          <Button variant="outline" className="w-full touch-manipulation min-h-[48px]">
-            <Users className="w-4 h-4 mr-2" />
+          <Button variant="outline" className="min-h-[48px] w-full touch-manipulation">
+            <Users className="mr-2 h-4 w-4" />
             Add Lead
           </Button>
         </div>
