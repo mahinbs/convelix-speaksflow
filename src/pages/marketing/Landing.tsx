@@ -332,7 +332,7 @@ const Landing = () => {
           ></div>
         </div>
 
-        <div className="relative z-30 mx-auto flex h-full max-w-7xl items-center px-4 py-20 sm:px-6 sm:py-28 lg:px-36 lg:pt-48">
+        <div className="relative z-30 mx-auto flex h-full max-w-7xl items-center px-4 pb-10 sm:px-6 sm:pb-20 lg:px-36 pt-36 lg:pt-48">
           <div className="w-full text-center">
             <h1 className="mb-6 text-3xl font-bold leading-tight sm:text-5xl lg:text-7xl">
               Automated Follow-Ups{" "}
