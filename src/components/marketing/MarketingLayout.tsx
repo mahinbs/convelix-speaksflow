@@ -166,7 +166,7 @@ export const MarketingLayout: React.FC<MarketingLayoutProps> = ({ children }) =>
           </div>
 
           <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-brand-800 text-center">
-            <p className="text-sm text-brand-300">© {new Date().getFullYear()} Convelix</p>
+            <p className="text-sm text-brand-300">© {new Date().getFullYear()} All Rights Reserved</p>
           </div>
         </div>
       </footer>
