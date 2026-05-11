@@ -24,11 +24,11 @@ const navigation = [
     name: 'Lead Management',
     icon: Users
   },
-  {
-    id: 'integrations',
-    name: 'Integrations',
-    icon: Zap
-  },
+  // {
+  //   id: 'integrations',
+  //   name: 'Integrations',
+  //   icon: Zap
+  // },
   {
     id: 'bland-ai',
     name: 'AI Calls',

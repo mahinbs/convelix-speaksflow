@@ -17,7 +17,7 @@ interface MobileSidebarProps {
 const navigation = [
   { id: 'dashboard', name: 'Dashboard', icon: Home },
   { id: 'leads', name: 'Leads', icon: Users },
-  { id: 'integrations', name: 'Integrations', icon: Zap },
+  // { id: 'integrations', name: 'Integrations', icon: Zap },
   { id: 'bland-ai', name: 'AI Calls', icon: Bot },
   { id: 'reports', name: 'Reports', icon: BarChart3 },
   { id: 'settings', name: 'Settings', icon: Settings }

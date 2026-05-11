@@ -164,7 +164,6 @@ export const MarketingLayout: React.FC<MarketingLayoutProps> = ({ children }) =>
               </ul>
             </div>
           </div>
-
           <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-brand-800 text-center">
             <p className="text-sm text-brand-300">© {new Date().getFullYear()} All Rights Reserved</p>
           </div>

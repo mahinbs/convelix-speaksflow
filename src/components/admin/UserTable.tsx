@@ -72,15 +72,15 @@ export const UserTable: React.FC = () => {
 
     if (error) {
         return (
-            <div className="text-center p-8 text-destructive">
+            <div className="text-center p-8 text-red-600">
                 Error loading users: {error instanceof Error ? error.message : 'Unknown error'}
             </div>
         );
     }
 
     return (
-        <div className="overflow-x-auto rounded-md border">
-            <Table className="min-w-[640px]">
+        <div className="rounded-md border">
+            <Table>
                 <TableHeader>
                     <TableRow>
                         <TableHead>Name</TableHead>

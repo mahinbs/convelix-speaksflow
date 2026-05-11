@@ -72,7 +72,18 @@ export const useSetupRequired = () => {
             console.log('User created after activation system - checking activation status');
 
             try {
-                // For new users, try to check the activation status
+                // Prefer RPC because it is security definer and avoids client-side RLS edge cases.
+                const { data: rpcData, error: rpcError } = await supabase.rpc('check_my_activation_status');
+                if (!rpcError && rpcData && rpcData.length > 0) {
+                    const status = rpcData[0].status;
+                    const setupRequiredForStatus = status !== 'active';
+                    console.log('Activation status from RPC:', status, 'Setup required:', setupRequiredForStatus);
+                    return setupRequiredForStatus;
+                }
+
+                console.log('RPC activation check failed or returned empty, falling back to direct query:', rpcError?.message);
+
+                // Fallback to direct query
                 const { data, error } = await supabase
                     .from('user_activation_status')
                     .select('status')
@@ -81,28 +92,19 @@ export const useSetupRequired = () => {
 
                 console.log('Activation status query result:', { data, error });
 
-                // If we get a 403 or permission error for new users, they should see setup notice
-                if (error && (error.code === 'PGRST301' || error.message.includes('permission') || error.message.includes('denied'))) {
-                    console.log('Permission denied for new user - showing setup notice');
-                    return true; // Show setup notice
-                }
-
-                // If other error for new users, still show setup notice to be safe
                 if (error) {
-                    console.log('Other error for new user - showing setup notice to be safe:', error.message);
+                    console.log('Activation check failed - showing setup notice:', error.message);
                     return true;
                 }
 
-                // If no data returned for new user, they should have had a record created - show setup notice
                 if (!data) {
                     console.log('No activation status found for new user - showing setup notice');
                     return true;
                 }
 
-                // If status exists and is pending, show setup notice
-                const isPending = data.status === 'pending';
-                console.log('User activation status:', data.status, 'Setup required:', isPending);
-                return isPending;
+                const setupRequiredForStatus = data.status !== 'active';
+                console.log('User activation status:', data.status, 'Setup required:', setupRequiredForStatus);
+                return setupRequiredForStatus;
 
             } catch (error) {
                 console.error('Unexpected error checking setup status:', error);

@@ -63,7 +63,7 @@ export const VapiAISettings: React.FC = () => {
               <Input 
                 id="webhook-url" 
                 placeholder="https://your-domain.com/webhook"
-                value="https://tmyyrcmeiaokzlhgtabp.supabase.co/functions/v1/vapi-webhook"
+                value="https://mzwxgrrxkbufzpialzmb.supabase.co/functions/v1/vapi-webhook"
                 readOnly
               />
             </div>

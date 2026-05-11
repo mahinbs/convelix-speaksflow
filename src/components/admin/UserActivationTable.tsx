@@ -72,10 +72,10 @@ export const UserActivationTable: React.FC = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'active': return 'bg-brand-100 text-brand-800';
-      case 'suspended': return 'bg-destructive/15 text-destructive';
-      case 'pending': return 'bg-brand-100 text-brand-900';
-      default: return 'bg-muted/90 text-foreground';
+      case 'active': return 'bg-green-100 text-green-800';
+      case 'suspended': return 'bg-red-100 text-red-800';
+      case 'pending': return 'bg-yellow-100 text-yellow-800';
+      default: return 'bg-gray-100 text-gray-800';
     }
   };
 
@@ -85,8 +85,8 @@ export const UserActivationTable: React.FC = () => {
 
   return (
     <div className="space-y-4">
-      <div className="overflow-x-auto rounded-md border">
-        <Table className="min-w-[640px]">
+      <div className="rounded-md border">
+        <Table>
           <TableHeader>
             <TableRow>
               <TableHead>User</TableHead>
@@ -115,7 +115,7 @@ export const UserActivationTable: React.FC = () => {
                   {activation.activated_by_full_name ? (
                     <div>
                       <div className="text-sm">{activation.activated_by_full_name}</div>
-                      <div className="text-xs text-muted-foreground">{activation.activated_by_email}</div>
+                      <div className="text-xs text-gray-500">{activation.activated_by_email}</div>
                     </div>
                   ) : (
                     'N/A'
@@ -147,7 +147,7 @@ export const UserActivationTable: React.FC = () => {
       </div>
 
       {activationStatuses.length === 0 && (
-        <div className="text-center py-8 text-muted-foreground">
+        <div className="text-center py-8 text-gray-500">
           No user activation records found.
         </div>
       )}

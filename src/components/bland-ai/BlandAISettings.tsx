@@ -79,7 +79,9 @@ export const BlandAISettings: React.FC = () => {
   return <div className="space-y-6">
       <div>
         <h2 className="text-2xl font-bold">AI Settings</h2>
-        <p className="text-muted-foreground">Configure your Bland.ai integration and preferences</p>
+        {/* <p className="text-muted-foreground">Configure your Bland.ai 
+        integration and preferences</p> */}
+        <p className="text-muted-foreground">Configure your AI Caller integration and preferences</p>
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
@@ -119,7 +121,7 @@ export const BlandAISettings: React.FC = () => {
               <Input
                 id="api-key"
                 type="password"
-                placeholder="Enter your Bland.ai API key"
+                placeholder="Enter your API key"
                 value={apiKey}
                 onChange={(e) => setApiKey(e.target.value)}
                 disabled={isLoading}

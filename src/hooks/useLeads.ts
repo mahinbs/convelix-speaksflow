@@ -127,7 +127,7 @@ export const useCreateLeadSource = () => {
       if (!user) throw new Error('User not authenticated');
 
       // Generate webhook URL
-      const webhookUrl = `https://tmyyrcmeiaokzlhgtabp.supabase.co/functions/v1/lead-webhook?source=${leadSource.source_type}&user_id=${user.id}`;
+      const webhookUrl = `https://mzwxgrrxkbufzpialzmb.supabase.co/functions/v1/lead-webhook?source=${leadSource.source_type}&user_id=${user.id}`;
 
       const { data, error } = await supabase
         .from('lead_sources')

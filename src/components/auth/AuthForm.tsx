@@ -232,7 +232,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({
           </Button>
         </form>
 
-        {isSignin && (
+        {/* {isSignin && (
           <>
             <div className="relative my-8">
               <div className="absolute inset-0 flex items-center">
@@ -247,9 +247,6 @@ export const AuthForm: React.FC<AuthFormProps> = ({
               type="button"
               variant="outline"
               className="h-12 w-full rounded-lg border-border bg-white text-[15px] font-medium text-foreground shadow-sm hover:bg-muted/50"
-              onClick={() => {
-                /* OAuth placeholder */
-              }}
               disabled
               title="Google sign-in coming soon"
             >
@@ -257,7 +254,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({
               Sign in with Google
             </Button>
           </>
-        )}
+        )} */}
 
         <div className="mt-10 space-y-6">
           {isSignin && (
